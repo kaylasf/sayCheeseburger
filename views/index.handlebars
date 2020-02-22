@@ -1,0 +1,42 @@
+<h1>Say CheeseBurger!</h1>
+
+
+<h2>Create your Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burgerInput">Burger Name:</label>
+    <input type="text" id="burgerInput" name="name">
+  </div>
+
+  <button type="submit" id="addBurg" >Add Burger</button>
+</form>
+
+<h2>Undevoured Burgers!</h2>
+
+<ul>
+  {{#each burger}}
+  {{#unless devoured}}
+
+  <li class="burgerlist" id="dev" data-uid="{{id}}">
+    {{burger_name}} <button type="button" id="devour" class="btn btn-outline-secondary btn-sm"
+      data-uid="{{id}}">Devour</button>
+  </li>
+  {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burger Bank</h2>
+
+<ul>
+  {{#each burger}}
+  {{#if devoured}}
+
+  <li class="burgerlist"  id="del" data-uid="{{id}}">
+    {{burger_name}} <button type="button" id="delete" class="btn btn-outline-secondary btn-sm"
+      data-uid="{{id}}">Delete</button>
+  </li>
+
+  {{/if}}
+  {{/each}}
+</ul>
