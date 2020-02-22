@@ -1,42 +1,62 @@
-<h1>Say CheeseBurger!</h1>
-
-
-<h2>Create your Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burgerInput">Burger Name:</label>
-    <input type="text" id="burgerInput" name="name">
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="display-4 mx-auto">Say CheeseBurger!</h1>
   </div>
 
-  <button type="submit" id="addBurg" >Add Burger</button>
-</form>
 
-<h2>Undevoured Burgers!</h2>
+  <div class="row mb-5">
+    <div class="col-12 text-center ">
+      <h2 class="mx-auto">Create A Burger</h2>
+    </div>
 
-<ul>
-  {{#each burger}}
-  {{#unless devoured}}
+    <div class="col-12 text-center">
+      <form class="create-form ">
 
-  <li class="burgerlist" id="dev" data-uid="{{id}}">
-    {{burger_name}} <button type="button" id="devour" class="btn btn-outline-secondary btn-sm"
-      data-uid="{{id}}">Devour</button>
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
+        <div class="form-group">
+          <label for="burgerInput">Burger Name:</label>
+          <input type="text" id="burgerInput" name="name">
+        </div>
 
-<h2>Burger Bank</h2>
+        <button type="submit" id="addBurg">Add Burger</button>
+      </form>
+    </div>
 
-<ul>
-  {{#each burger}}
-  {{#if devoured}}
+  </div>
 
-  <li class="burgerlist"  id="del" data-uid="{{id}}">
-    {{burger_name}} <button type="button" id="delete" class="btn btn-outline-secondary btn-sm"
-      data-uid="{{id}}">Delete</button>
-  </li>
+  <div class="jumbotron">
 
-  {{/if}}
-  {{/each}}
-</ul>
+    <div class="row  ">
+      <div class="col-6">
+        <h2>Eat Your Burger</h2>
+
+        <ul>
+          {{#each burger}}
+          {{#unless devoured}}
+
+          <li class="burgerlist" id="dev" data-uid="{{id}}">
+            {{burger_name}} <button type="button" id="devour" class="btn btn-outline-secondary btn-sm"
+              data-uid="{{id}}">Devour</button>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-6">
+        <h2>Burger Bank</h2>
+
+        <ul>
+          {{#each burger}}
+          {{#if devoured}}
+
+          <li class="burgerlist" id="del" data-uid="{{id}}">
+            {{burger_name}} <button type="button" id="delete" class="btn btn-outline-secondary btn-sm"
+              data-uid="{{id}}">Delete</button>
+          </li>
+
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
