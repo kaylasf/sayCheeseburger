@@ -1,40 +1,45 @@
-<div class="container-fluid">
+<div class="container-fluid  m-0 p-0" id="mainContain">
+
+
   <div class="row">
     <h1 class="display-4 mx-auto">Say CheeseBurger!</h1>
   </div>
 
 
   <div class="row mb-5">
+
     <div class="col-12 text-center ">
-      <h2 class="mx-auto">Create A Burger</h2>
+      <h2 class="mx-auto lead">Create A Burger</h2>
     </div>
 
     <div class="col-12 text-center">
       <form class="create-form ">
 
         <div class="form-group">
-          <label for="burgerInput">Burger Name:</label>
+          <label for="burgerInput" class="lead">Burger Name:</label>
           <input type="text" id="burgerInput" name="name">
         </div>
 
-        <button type="submit" id="addBurg">Add Burger</button>
+        <button type="submit" class="lead btn btn-outline-dark btn-sm" id="addBurg">Add Burger</button>
       </form>
     </div>
 
   </div>
 
-  <div class="jumbotron">
+
+
+  <div class="jumbotron  w-50 mx-auto" >
 
     <div class="row  ">
       <div class="col-6">
-        <h2>Eat Your Burger</h2>
+        <h2 class="lead">Eat Your Burger</h2>
 
         <ul>
           {{#each burger}}
           {{#unless devoured}}
 
-          <li class="burgerlist" id="dev" data-uid="{{id}}">
-            {{burger_name}} <button type="button" id="devour" class="btn btn-outline-secondary btn-sm"
+          <li class="burgerlist lead" id="dev" data-uid="{{id}}">
+            {{burger_name}} <button type="button" id="devour" class="btn btn-outline-dark btn-sm lead"
               data-uid="{{id}}">Devour</button>
           </li>
           {{/unless}}
@@ -42,14 +47,14 @@
         </ul>
       </div>
       <div class="col-6">
-        <h2>Burger Bank</h2>
+        <h2 class="lead">Burger Bank</h2>
 
         <ul>
           {{#each burger}}
           {{#if devoured}}
 
-          <li class="burgerlist" id="del" data-uid="{{id}}">
-            {{burger_name}} <button type="button" id="delete" class="btn btn-outline-secondary btn-sm"
+          <li class="burgerlist lead" id="del" data-uid="{{id}}">
+            {{burger_name}} <button type="button" id="delete" class="btn btn-outline-dark btn-sm lead"
               data-uid="{{id}}">Delete</button>
           </li>
 
@@ -59,4 +64,6 @@
       </div>
     </div>
   </div>
+
+
 </div>

@@ -1,3 +1,17 @@
-/* body{
-    background-image: url('/homework/week_13/homework/sayCheeseburger/public/assets/img/mcdonald-store-at-nigh-time-1656225.jpg');
-} */
+body{
+    background-color: #fecc00;
+}
+
+#mainContain{
+    background-image: url('../img/yellowburger.jpg');
+    background-repeat: no-repeat;
+    
+    background-position:  180%  0%;
+  
+    /* background-color: red; */
+    height: 100vh;
+
+}
+.btn{
+    /* background-color: #feaf17; */
+}
